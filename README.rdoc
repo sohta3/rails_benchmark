@@ -1,28 +1,9 @@
-== README
+== rails_benchmark
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* ruby 2.2.4p230
+* Rails 4.2.5
 
-Things you may want to cover:
+$ PUMA_WORKERS=4 MIN_THREADS=1 MAX_THREADS=16 RACK_ENV=production bundle exec puma
 
-* Ruby version
+$ wrk -t4 -c100 -d30S --timeout 2000 "http://127.0.0.1:9292"
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
